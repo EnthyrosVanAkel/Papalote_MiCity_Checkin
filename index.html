@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-      <title>Registro RFID Museo Papalote | Poppler | Cocolab</title>
+      <title>Check-in MiCity RFID | Museo Papalote | Poppler | Cocolab</title>
 
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -40,66 +40,37 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides" style="width:1230px!important;">
       
-        <section data-background="assets/fondo_1366_768.png" class="center">
+        <section data-background="assets/ciudad.png" class="center">
         <div>
             <p class="scan-text">
-              <h1 class="titulo">¡Prepárate para la aventura!</h1>
+              <h1 class="titulo">Ciudad Papalote</h1>
+              <h2 class="titulo2">Registro</h2>
 
             </p>
           </div>
-        <img src="assets/logo_406_406.png" class="papalote-logo"> 
-        <img src="assets/RFID_surface_194_103.png" class="scan-img"> 
+        <img src="assets/rfid.png" class="scan-img">
+        <h3 class="titulo3">Pasa aquí tu brazalete.</h3> 
         </section>
 
-        <section data-background="assets/fondo_1366_768.png" class="center">
-          <img src="assets/aviso.png" class="fondo-aviso">
-          <div class="texto-aviso">
-                        <h1 class="titulo-aviso">AVISO DE PRIVACIDAD</h1>
-                        <p class="texto-p">
-                    
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    </p>
-                    <a class="btn btn-noacepto" onclick="backSlide();"></a>
-                    <a class="btn btn-acepto" onclick="nextSlide();"></a>
-                    </div>
+        <section data-background="assets/fondo.png" class="center">
           
         </section>
 
-        <section data-background="assets/fondo_1366_768.png" class="center">
-          <img src="assets/instrucci%C3%B3n1_243_56.png" class="escribe-img">
-          <input type="email" name="correo" class="correo" placeholder="Escribe aquí tu correo electrónico">
-          <a class="btn btn-regresar" onclick="backSlide();"></a>
-          <a class="btn btn-continuar" onclick="ObtenerDatos();"></a>
+        <section data-background="#000000" class="center">
+          <iframe width="700" height="400" src="https://www.youtube.com/embed/5E-tOdCOD50?autoplay=1" frameborder="0"></iframe>
+          <a class="btn btn-pasar" onclick="nextSlide();"></a>
+          
         </section>
 
-        <section data-background="assets/fondo_1366_768.png" class="center">
-
-          <div class="select">
-                <label for="audioSource">Audio source: </label><select id="audioSource"></select>
-              </div>
-
-              <div class="select">
-                <label for="videoSource">Video source: </label><select id="videoSource"></select>
-              </div>
-
-
-            <video class="stretch" muted autoplay></video>
-              <img src="assets/silueta_241_297.png" class="foto-silueta">
-              <a class="btn btn-tomar-regresar" onclick="backSlide();"></a>
-              <button id="snap" onclick="nextSlide();"></button>
-
-              <h2 class='texto-foto'>Coloca tu cara dentro de la silueta y toca la cámara.</h2>
-
-        </section>
-
-        <section data-background="assets/fondo_1366_768.png" class="center">
-          <img src="assets/instruccion2.png" class="foto-repetir">
-          <h2 class='texto-final'>¡Bien, Nombre, estas list@ para la aventura!</h2>
-
-            <canvas id="canvas" style="border-radius:100%!important;" width="500" height="500"></canvas>
- 
-            <a class="btn btn-si" onclick="backPhoto();"></a>
-          <a class="btn btn-no" onclick="fin();"></a>
+        <section data-background="assets/fondo.png" class="center">
+          <div class="globo">
+            <h1 class="globo-text">Niñ@</h1>
+            <img src="assets/globo.png" class="globo-img">
+            <img src="assets/nina5.png" class="monito">
+          </div>
+          <img src="assets/flecha.png" class="mirar-sim">
+          <h2 class="mirar">Mira hacia arriba.</h2>
+          <h3 class="globo-abajo">¡Listo! Toca el globo para despegar hacia la ciudad Papalote.</h3> 
         </section>
 
       </div>
@@ -108,6 +79,7 @@
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
    
+    
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="http://localhost:1235/socket.io/socket.io.js"></script>
 
@@ -134,7 +106,7 @@
 
     </script>
 
-    <script>
+       <script>
  //Initialize RFID Reader
 
     if (Reveal.isFirstSlide())
@@ -165,6 +137,7 @@
     }
 
     </script>
+    
       <script>
       function nextSlide(){
       Reveal.next();
@@ -173,119 +146,24 @@
       Reveal.prev();
     }
 
-
-    function home(){
-      Reveal.slide(0);
-      start();
-      //Esconde 
-      $(".texto-final").css("display","none");
-      $("#home").css("display","none");
-      //muestra
-      $(".foto-repetir").css("display","block");
-      $(".btn-no").css("display","block");
-      $(".btn-si").css("display","block");
-    }
-
-    function backPhoto(){
-      start();
-      Reveal.prev();
-    }
-
-    function fin(){
-      //Muestra 
-      $(".texto-final").css("display","block");
-      $("#home").css("display","block");
-      //Esconde
-      $(".foto-repetir").css("display","none");
-      $(".btn-no").css("display","none");
-      $(".btn-si").css("display","none");
-
-    }
-    </script>
-
-
-    <script>
- // Camera 
-    'use strict';
-
-    var videoElement = document.querySelector('video');
-    var audioSelect = document.querySelector('select#audioSource');
-    var videoSelect = document.querySelector('select#videoSource');
-    var context = canvas.getContext("2d");
-
-    navigator.getUserMedia = navigator.webkitGetUserMedia;
-    navigator.getUserMedia = navigator.getUserMedia ||
-    navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-
-    function gotSources(sourceInfos) {
-      for (var i = 0; i !== sourceInfos.length; ++i) {
-        var sourceInfo = sourceInfos[i];
-        var option = document.createElement('option');
-        option.value = sourceInfo.id;
-
-        if (sourceInfo.kind === 'audio') {
-          option.text = sourceInfo.label || 'microphone ' +
-            (audioSelect.length + 1);
-          audioSelect.appendChild(option);
-        } else if (sourceInfo.kind === 'video') {
-          option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
-          videoSelect.appendChild(option);
-        } else {
-          console.log('Some other kind of source: ', sourceInfo);
-        }
-
-      }
-    }
-
-    if (typeof MediaStreamTrack === 'undefined' ||
-        typeof MediaStreamTrack.getSources === 'undefined') {
-      alert('This browser does not support MediaStreamTrack.\n\nTry Chrome.');
-    } else {
-      MediaStreamTrack.getSources(gotSources);
-    }
-
-    function successCallback(stream) {
-      window.stream = stream; // make stream available to console
-      videoElement.src = window.URL.createObjectURL(stream);
-      videoElement.play();
-    }
-
-    function errorCallback(error) {
-      console.log('navigator.getUserMedia error: ', error);
-    }
-
-    function start() {
-      if (!!window.stream) {
-        videoElement.src = null;
-        window.stream.stop();
-      }
-      var audioSource = audioSelect.value;
-      var videoSource = 'fd246cc6d5ee6c9038aa3c3f20519a4168fded0743c2e1a26f38db5188d17ddc';
-      var constraints = {
-        audio: {
-          optional: [{
-            sourceId: audioSource
-          }]
-        },
-        video: {
-          optional: [{
-            sourceId: videoSource
-          }]
-        }
-      };
-      navigator.getUserMedia(constraints, successCallback, errorCallback);
-    }
-
-    start();
-
-    document.getElementById("snap").addEventListener("click", function() {
-      context.drawImage(videoElement, 0, 0, 500, 500);
-    });
-
-
-    //
+   
 
     </script>
-    
+
+
+   <script>
+$( ".globo" ).click(function() {
+  $( ".globo-img" ).animate({ "top": "-=1000px" }, "slow" );
+  $(".globo-text").css("display","none");
+  $(".mirar").css("display","block");
+  $(".mirar-sim").css("display","block");
+  $(".globo-abajo").css("display","none");
+  $( ".monito" ).animate({ "top": "-=1000px" }, "slow" );
+});
+ 
+
+</script>
+
+
   </body>
 </html>

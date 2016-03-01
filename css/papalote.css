@@ -15,11 +15,11 @@
 
 
 .scan-img{
-    position: absolute;
-    left: 271px;
-    top: 162px;
-	width: 406px;
-	height: 406px;
+    position: absolute!important;
+    left: 271px!important;
+    top: 162px!important;
+	width: 200px!important;
+	height: 200px!important;
 }
 
 .scan-text{
