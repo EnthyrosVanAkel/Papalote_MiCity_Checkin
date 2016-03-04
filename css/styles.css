@@ -6,13 +6,13 @@
 	height: 70px!important;
     position: absolute!important;
     top: 580px!important;
-    left: 570px!important;
+    left: 530px!important;
 }
 
 .titulo {
 	position: absolute!important;
 	top: 200px!important;
-    left: 280px!important;
+    left: 240px!important;
     font-family: ExoSlabProExtraBold!important;
     font-size: 66pt!important;
     color: rgb(255,255,255)!important;
@@ -22,7 +22,7 @@
 .titulo2 {
 	position: absolute!important;
 	top: 300px!important;
-    left: 550px!important;
+    left: 510px!important;
     font-family: TheMixB-W8ExtraBold!important;
     font-size: 26pt!important;
     color: rgb(255,255,255)!important;
@@ -33,7 +33,7 @@
 .titulo3 {
 	position: absolute!important;
 	top: 650px!important;
-    left: 500px!important;
+    left: 460px!important;
     font-family: TheMixB-W8ExtraBold!important;
     font-size: 15pt!important;
     color: rgb(255,255,255)!important;
@@ -79,7 +79,7 @@
 .atras {
   position: absolute!important;
   top: -50px!important;
-  right: -100px!important;
+  right: 10px!important;
   height: 83px!important;
   width: 77px!important;
   -webkit-border-radius: 0!important;
