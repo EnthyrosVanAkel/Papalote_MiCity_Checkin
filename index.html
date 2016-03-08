@@ -149,7 +149,7 @@
     function nexttSlide(){
       Reveal.next();
       $(".continuar").css("display","none");
-      $('.escoge-silueta').replaceWith("<img src='assets/silueta.png' class='escoge-silueta'>");
+      
     }
     function backSlide(){
       Reveal.prev();
@@ -169,6 +169,20 @@
       nextSlide();
     }
 
+
+    function home(){
+      Reveal.slide(0);
+      $('.escoge-silueta').replaceWith("<img src='assets/silueta.png' class='escoge-silueta'>");
+      $( ".globo-img" ).animate({ "top": "+=1000px" }, "fast" );
+      $(".globo-text").css("display","block");
+      $(".mirar").css("display","none");
+      $(".mirar-sim").css("display","none");
+      $(".globo-abajo").css("display","block");
+      $( ".monito" ).animate({ "top": "+=1000px" }, "fast" );
+      $('.monito').replaceWith("<img src='assets/silueta.png' class='monito'>");
+    }
+
+ 
     </script>
 
 
@@ -180,7 +194,7 @@ $( ".globo" ).click(function() {
   $(".mirar-sim").css("display","block");
   $(".globo-abajo").css("display","none");
   $( ".monito" ).animate({ "top": "-=1000px" }, "slow" );
-  fin();
+  setTimeout(function(){home()},5000);
 });
  
 
