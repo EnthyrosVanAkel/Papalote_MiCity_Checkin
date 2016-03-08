@@ -189,12 +189,12 @@
 
    <script>
 $( ".globo" ).click(function() {
-  $( ".globo-img" ).animate({ "top": "-=1000px" }, "slow" );
+  $( ".globo-img" ).animate({ "top": "-=1000px" }, 8000 );
   $(".globo-text").css("display","none");
   $(".mirar").css("display","block");
   $(".mirar-sim").css("display","block");
   $(".globo-abajo").css("display","none");
-  $( ".monito" ).animate({ "top": "-=1000px" }, "slow" );
+  $( ".monito" ).animate({ "top": "-=1000px" }, 8000 );
   setTimeout(function(){home()},5000);
 });
  
