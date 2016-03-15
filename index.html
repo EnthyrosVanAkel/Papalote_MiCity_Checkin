@@ -59,7 +59,7 @@
         </section>
 
         <section data-background="#000000" class="center">
-         <video id="videotutorial" src="video/tutorial.mov" width="720" height="480"></video>
+         <video id="videotutorial" src="video/tutorial.mp4" width="720" height="480"></video>
           <a class="btn btn-pasar" onclick="nextSlide();"></a>
           
         </section>
@@ -88,7 +88,7 @@
         progress: false,
         history: true,
         center: false,
-        touch: true,
+        touch: false,
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         // Optional reveal.js plugins
         dependencies: [
@@ -145,6 +145,7 @@
       <script>
       function play_video(){
         var video = document.getElementById('videotutorial');
+        console.log(video);
         video.play();
       }
 
