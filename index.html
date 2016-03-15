@@ -59,7 +59,7 @@
         </section>
 
         <section data-background="#000000" class="center">
-          <iframe width="700" height="400" src="https://www.youtube.com/embed/5E-tOdCOD50?autoplay=1" frameborder="0"></iframe>
+         <video id="videotutorial" src="video/tutorial.mov" width="720" height="480"></video>
           <a class="btn btn-pasar" onclick="nextSlide();"></a>
           
         </section>
@@ -143,6 +143,19 @@
 
     
       <script>
+      function play_video(){
+        var video = document.getElementById('videotutorial');
+        video.play();
+      }
+
+      function reset_video(){
+        var video = document.getElementById('videotutorial');
+        video.pause();
+        video.currentTime = 0;
+        video.load();
+      }
+
+
       function nextSlide(){
       Reveal.next();
     }
@@ -150,6 +163,7 @@
     function nexttSlide(){
       Reveal.next();
       $(".continuar").css("display","none");
+      play_video();
       
     }
     function backSlide(){
@@ -181,6 +195,7 @@
       $(".globo-abajo").css("display","block");
       $( ".monito" ).animate({ "top": "+=1000px" }, "fast" );
       $('.monito').replaceWith("<img src='assets/silueta.png' class='monito'>");
+      reset_video();
     }
 
  
