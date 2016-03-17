@@ -37,19 +37,19 @@
 
             </p>
           </div>
-        <img src="assets/rfid.png" class="scan-img">
+        <img src="assets/rfid/1.png" id="rfid" class="scan-img">
         <h3 class="titulo3">Pasa aquí tu brazalete.</h3> 
         </section>
 
         <section data-background="assets/casa.png" class="center">
           <div class="tabla-caras1">
-            <img src="assets/F/c1.png" id='c1' class='cuadrito'>
-            <img src="assets/F/c2.png" id='c2' class='cuadrito'>
-            <img src="assets/F/c3.png" id='c3' class='cuadrito'>
+            <img src="assets/M/c1.png" id='c1' class='cuadrito'>
+            <img src="assets/M/c2.png" id='c2' class='cuadrito'>
+            <img src="assets/M/c3.png" id='c3' class='cuadrito'>
           </div>
           <div class="tabla-caras2">
-            <img src="assets/F/c4.png" id='c4' class='cuadrito'>
-            <img src="assets/F/c5.png" id='c5' class='cuadrito'>
+            <img src="assets/M/c4.png" id='c4' class='cuadrito'>
+            <img src="assets/M/c5.png" id='c5' class='cuadrito'>
           </div>
           <img src="assets/instruccion.png" class="escoge-text">
           <img src="assets/silueta.png" class="escoge-silueta">
@@ -216,6 +216,22 @@ function enviar_osc(r,m){
 }
 
 </script>
+<script>
+function rfid(){
+  var img = document.getElementById("rfid");
+  url = "assets/rfid/"+y+".png";
+  img.src = url;
+  y++;
+
+  if (y >= 78) {
+    y = 1;
+  }
+  setTimeout("rfid()",100);
+}
+y = 1;
+setTimeout("rfid()",100);
+</script>
+
 
    <script>
 $( ".globo" ).click(function() {
