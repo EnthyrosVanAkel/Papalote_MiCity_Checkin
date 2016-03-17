@@ -67,12 +67,12 @@
         <section data-background="assets/aerea.png" class="center">
           <div class="globo">
             <h1 class="globo-text">Niñ@</h1>
-            <img src="assets/globo.png" class="globo-img">
+           <!-- <img src="assets/globo.png" class="globo-img">  -->
             <img src="assets/silueta.png" class="monito">
           </div>
           <img src="assets/flecha.png" class="mirar-sim">
           <h2 class="mirar">Mira hacia arriba.</h2>
-          <h3 class="globo-abajo">¡Listo! Toca el globo para despegar hacia la ciudad Papalote.</h3> 
+          <h3 class="globo-abajo">¡Listo! Toca el paracaídas para despegar hacia la ciudad Papalote.</h3> 
         </section>
 
       </div>
@@ -88,7 +88,7 @@
         progress: false,
         history: true,
         center: false,
-        touch: false,
+        touch: true,
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         // Optional reveal.js plugins
         dependencies: [
@@ -104,6 +104,7 @@
     </script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://localhost:1235/socket.io/socket.io.js"></script>
+    <script src="http://localhost:1236/socket.io/socket.io.js"></script>
     <script>
 
 
@@ -114,6 +115,7 @@
     var rfid1;
     var name;
     var genere;
+    var muneca;
 </script>
 
  <script>
@@ -121,8 +123,8 @@
     //Initialize RFID Reader
       if (Reveal.isFirstSlide()){
          console.log(Reveal.isFirstSlide());
-      var socket = io.connect("http://localhost:1235");
-      socket.on("rfid", function (data){
+      var socket1 = io.connect("http://localhost:1235");
+      socket1.on("rfid", function (data){
         if(Reveal.isFirstSlide() == true){
             rfid1 = data.rfid.toString();
             console.log(rfid1);
@@ -132,7 +134,7 @@
 
       
     }else{
-      socket.on("refresh", function (data){
+      socket1.on("refresh", function (data){
         console.log("time to reload");
          location.reload();
       });
@@ -201,10 +203,23 @@
 
  
     </script>
+<script type="text/javascript">
 
+var socket2 = io.connect("http://localhost:1236");
+
+
+function enviar_osc(r,m){
+  rfid = r;
+    monito = m;
+    osc = rfid+','+monito;
+  socket2.emit('mensaje',osc);
+}
+
+</script>
 
    <script>
 $( ".globo" ).click(function() {
+  enviar_osc(rfid1,muneca);
   $( ".globo-img" ).animate({ "top": "-=1000px" }, 8000 );
   $(".globo-text").css("display","none");
   $(".mirar").css("display","block");
@@ -216,29 +231,34 @@ $( ".globo" ).click(function() {
  
 
  $( "#c1" ).click(function() {
+  muneca = 1;
   $(".continuar").css("display","block");
   $('.escoge-silueta').replaceWith("<img src='assets/F/n1.png' class='escoge-silueta'>");
-  $('.monito').replaceWith("<img src='assets/F/n1.png' class='monito'>");
+  $('.monito').replaceWith("<img src='assets/F/p1.png' class='monito'>");
 });
  $( "#c2" ).click(function() {
+  muneca = 2;
   $(".continuar").css("display","block");
   $('.escoge-silueta').replaceWith("<img src='assets/F/n2.png' class='escoge-silueta'>");
-  $('.monito').replaceWith("<img src='assets/F/n2.png' class='monito'>");
+  $('.monito').replaceWith("<img src='assets/F/p2.png' class='monito'>");
 });
  $( "#c3" ).click(function() {
+  muneca = 3;
   $(".continuar").css("display","block");
   $('.escoge-silueta').replaceWith("<img src='assets/F/n3.png' class='escoge-silueta'>");
-  $('.monito').replaceWith("<img src='assets/F/n3.png' class='monito'>");
+  $('.monito').replaceWith("<img src='assets/F/p3.png' class='monito'>");
 });
  $( "#c4" ).click(function() {
+  muneca = 4;
   $(".continuar").css("display","block");
   $('.escoge-silueta').replaceWith("<img src='assets/F/n4.png' class='escoge-silueta'>");
-  $('.monito').replaceWith("<img src='assets/F/n4.png' class='monito'>");
+  $('.monito').replaceWith("<img src='assets/F/p4.png' class='monito'>");
 });
  $( "#c5" ).click(function() {
+  muneca = 5;
   $(".continuar").css("display","block");
   $('.escoge-silueta').replaceWith("<img src='assets/F/n5.png' class='escoge-silueta'>");
-  $('.monito').replaceWith("<img src='assets/F/n5.png' class='monito'>");
+  $('.monito').replaceWith("<img src='assets/F/p5.png' class='monito'>");
 });
 
 
